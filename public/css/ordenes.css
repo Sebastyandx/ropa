@@ -1,0 +1,31 @@
+body{
+    margin-top: 150px;
+}
+.container-orden{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+}
+.container{
+    padding: 10px;
+    border: solid 1px rgb(212, 211, 211);
+    margin: auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 1px 0px 10px rgb(185, 185, 185);
+
+}
+.orden{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+
+.orden img{
+    max-width: 200px;
+  }

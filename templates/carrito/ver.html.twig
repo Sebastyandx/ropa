@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+   {% block stylesheets %}
+        <link rel='stylesheet' href='{{ asset('css/carrito.css' )}}' {# ASSET SIRVE PARA CARGAR RECURSOS DE NUESTRA CARPETA PUBILICA  #}/>
+
+      
+    {% endblock %}
+{% block body %}
+<div>
+<div>
+
+<h1>Carrito de Compras</h1>
+
+{% if carrito is empty %}
+    <p class="alert alert-info">El carrito está vacío.</p>
+{% else %}
+    <table class="table table-bordered table-hover">
+        <thead  class="thead-dark">
+            <tr class='cabecera'>
+                <th>Producto</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Unidades</th>
+                <th>Precio total</th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in carrito %}
+                <tr>
+                    <th>{{ item.producto.nombre }}</th>
+                    <th>{{ item.producto.descripcion }}</th>                    
+                    <th>{{ item.producto.precio }} €</th>
+                    <th>{{ item.cantidad }}</th>
+                    <th>{{ item.producto.precio * item.cantidad }} €</th>
+
+                    <th>
+                        <a href="{{ path('eliminar_del_carrito', {id: item.producto.id}) }}">Ver</a>
+                        <a href="{{ path('eliminar_del_carrito', {id: item.producto.id}) }}">Eliminar</a>
+
+                    </th>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class='container-btn-vaciar'>
+
+    <a href="{{ path('vaciar_carrito') }}" class="btn btn-warning">Vaciar Carrito</a>
+</div>
+
+{% endif %}
+
+</div>
+
+    {% endblock %}

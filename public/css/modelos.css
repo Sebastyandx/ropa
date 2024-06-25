@@ -1,0 +1,151 @@
+/* NAVBAR */
+.navbar{
+    display: flex;
+    justify-content: center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.725);
+    animation: esconder;
+    animation-timeline: scroll(root);
+    animation-range: 0 200px;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+
+
+    }
+li{
+        margin: 30px;
+        list-style: none;        
+}
+        
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@keyframes esconder{
+    from{
+        opacity: 0;
+    } 
+    to{
+        opacity: 1;
+    }
+}
+
+
+/* PAGINA PRODUCTOS */
+#container-modelos{
+    padding-top: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    align-items: center;
+    justify-items: center ;
+    justify-content: center;
+    margin: auto;
+}
+
+#container-modelos img{
+    cursor: pointer;
+    border-radius: 4px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.div-modelos{
+    display: contents;
+
+}
+
+
+/* MODAL IMAGEN */
+#modal-imagen{
+    width: 1100px;
+    margin: auto;
+    position: fixed;
+    background-color: antiquewhite;
+    left: 15%;
+    top: 10%;
+    z-index: 10000;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+
+#container-modal{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    width: 70%;
+    height: 100%;
+}
+
+
+.imagenes-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgropa{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.container-modal img{
+    width: 50%;
+}
+
+.ropa2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#cerrarModal{
+    border: solid 1px black;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-right: 5px;
+
+}
+#cerrarModal:hover{
+    scale: 1.1;
+    border: solid 1px rgb(255, 255, 255);
+    background-color: black;
+    cursor: pointer;    
+    color: white;
+    
+}
+
+
+#conte{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.agregarCarrito{
+    border: solid 1px black;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.agregarCarrito:hover{
+    scale: 1.1;
+    border: solid 1px rgb(255, 255, 255);
+    background-color: black;
+    color: white;
+    cursor: pointer;    
+}
+a{
+    text-decoration: none;
+    color: black;
+}

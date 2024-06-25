@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos{% endblock %}
+
+{% block body %}
+{{parent()}}
+
+    {{dump(productos15)}}
+
+<div class="container-todo">
+    {% for producto in productos15 %}
+            <div class='contenedor-producto-all'>
+                <img src="{{asset('/img/ropa/' ~ producto.imagen)}}">
+                <div class='info-producto'>
+                    <p> {{producto.nombre}} </p>
+                    <p>{{producto.precio}}€</p>
+                </div>
+            </div>        
+    {% endfor %}
+</div>
+{% endblock %}

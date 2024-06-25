@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+        <link rel='stylesheet' href='{{ asset('css/registro.css' )}}' {# ASSET SIRVE PARA CARGAR RECURSOS DE NUESTRA CARPETA PUBILICA  #}/>
+
+{% endblock %}
+{% block title %}Registro!{% endblock %}
+
+{% block body %}
+<div id='form-container'class='container'>
+ {{form_start(registration_form)}}
+ 
+ {{form_label(registration_form.email,'Email')}}
+ {{form_widget(registration_form.email)}}
+ 
+
+ {{form_label(registration_form.password,'Contraseña')}}
+ {{form_widget(registration_form.password)}}
+ 
+ {{form_label(registration_form.nombre,'Nombre')}}
+ {{form_widget(registration_form.nombre)}}
+
+ {{form_label(registration_form.telefono,'Telefono')}}
+ {{form_widget(registration_form.telefono)}}
+
+  {{form_label(registration_form.direccion,'Direccion')}}
+ {{form_widget(registration_form.direccion)}}
+
+<div class='submit d-flex justify-content-center'>
+{{form_widget(registration_form.registrase)}}
+</div>
+ {{form_end(registration_form)}}
+
+</div>
+
+{% endblock %}

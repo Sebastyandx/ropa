@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Productos{% endblock %}
+   {% block stylesheets %}
+       {{ parent() }}
+
+        <link rel='stylesheet' href='{{ asset('css/modelos.css' )}}' {# ASSET SIRVE PARA CARGAR RECURSOS DE NUESTRA CARPETA PUBILICA  #}/>
+
+      
+    {% endblock %}
+{% block body %}
+{{parent()}}
+
+<div id="container-modelos">
+{#     {% for imagene in imagenes %}
+    <div class='div-modelos'>
+                    <img class='imagen-modelo'
+                     data-id='{{imagene.id}}'src="{{asset('/img/modelo/' ~ imagene.url)}}">
+    </div>
+    {% endfor %}#}
+</div> 
+
+
+<div id='modal-imagen'>
+        <div id='cerrarModal'>Cerrar</div>
+    <div id='conte'>
+        <div id='container-modal'>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="marcador" style="height: 1px"></div>
+{% block javacripts %}
+<script src='{{asset('js/modal.js')}}'></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+{% endblock %}
+
+
+
+{% endblock %}

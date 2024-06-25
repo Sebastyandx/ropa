@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ordenes de compra{% endblock %}
+   {% block stylesheets %}
+        <link rel='stylesheet' href='{{ asset('css/ordenes.css' )}}' {# ASSET SIRVE PARA CARGAR RECURSOS DE NUESTRA CARPETA PUBILICA  #}/>
+
+      
+    {% endblock %}
+
+{% block body %}
+
+<h1>Ordenes</h1>
+<div>
+    <div class='container'>
+     {% for  orden in ordenes %}
+    <div>
+        <h5>Orden Nº: {{orden.id}}</h5>
+
+        <h3>Total: {{orden.precio}}€</h3>    
+    </div>
+    <div class='container-orden'>
+    {% for  producto in productos %}
+    <div class='orden'>
+    <p>Articulo: {{producto.productoId.nombre}}</p>
+    <img src="{{asset('/img/ropa/' ~ producto.productoId.imagen)}}">
+    <p>Cantidad: {{producto.cantidad}}</p>
+    <p>Total: {{producto.cantidad * producto.productoId.precio}} €</p>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    </div>
+</div>
+
+</div>
+{% endblock %}
